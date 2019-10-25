@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class New_Dicebraker extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class New_Dicebraker extends AppCompatActivity {
         setContentView(R.layout.activity_new__dicebraker);
 
         ConfigureCancelButton();
-        //ConfigureAddButton();
+        ConfigureAddButton();
     }
 
     private void ConfigureCancelButton(){
@@ -22,6 +23,18 @@ public class New_Dicebraker extends AppCompatActivity {
         CancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    private void ConfigureAddButton(){
+        Button AddButton = (Button) findViewById(R.id.Add);
+        AddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText Input = findViewById(R.id.Input);
+                Input.getText().toString();
                 finish();
             }
         });
