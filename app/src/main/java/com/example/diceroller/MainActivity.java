@@ -33,9 +33,19 @@ public class MainActivity extends AppCompatActivity {
         AddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, New_Dicebraker.class));
+                Intent n_q = (new Intent(MainActivity.this, New_Dicebraker.class));
+                startActivityForResult(n_q,1);
             }
         });
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                String strEditText = data.getStringExtra("editTextValue");
+            }
+        }
     }
 
     private void ConfigurePlayButton(){
